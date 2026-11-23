@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Singularity IP</title>
+<meta name="description" content="Singularity IP organises public patent publications into one clean, searchable database.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calm, confident, a data company that says little.
+   IDEA: a singularity: scattered public records drawn into one ordered point.
+   PICTURE: an orbit of many small marks converging on one bright core.
+   COLOUR and TYPE: ice ground, ink type, one hot pink accent; Space Grotesk titles, Inter text.
+   LAYOUT: thin top bar, one-screen hero (words left, orbit right), a three-step strip, plain footer. */
+:root{color-scheme:light dark;--bg:light-dark(#dff1f7,#06222e);--ink:light-dark(#06222e,#dff1f7);--soft:light-dark(#3b5a66,#9fc2cf);--line:light-dark(#b9dbe6,#123b4b);--accent:#ff2e7e;--card:light-dark(#eef8fb,#0a2c3a)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:max(5vw,16px)}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.mark{display:flex;align-items:center;gap:10px;font:600 19px/1 "Space Grotesk",sans-serif;text-decoration:none}
+.mark svg{width:26px;height:26px}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-weight:500;color:var(--soft)}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
+.menu{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--ink);cursor:pointer}
+.menu span,.menu span::before,.menu span::after{display:block;width:18px;height:2px;margin:auto;background:currentColor;position:relative;content:""}
+.menu span::before{position:absolute;top:-6px}.menu span::after{position:absolute;top:6px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center;min-height:calc(100svh - 64px);padding-block:clamp(40px,7vw,96px)}
+h1{font:600 clamp(34px,5.2vw,56px)/1.05 "Space Grotesk",sans-serif;letter-spacing:-.02em;margin:0 0 20px;text-wrap:balance}
+.lede{font-size:18px;color:var(--soft);max-width:34ch;margin:0 0 32px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:500;text-decoration:none;border:0}
+.btn:hover{background:var(--accent);color:#fff}
+.btn svg{width:16px;height:16px}
+.fig{position:relative;aspect-ratio:1/1;width:100%;max-width:560px;justify-self:end}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+.steps{border-top:1px solid var(--line);padding-block:clamp(40px,6vw,80px)}
+.steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.steps h2{font:600 22px/1.2 "Space Grotesk",sans-serif;margin:14px 0 8px}
+.steps p{margin:0;color:var(--soft)}
+.dot{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line)}
+.dot svg{width:16px;height:16px}
+.contact{padding-block:clamp(40px,6vw,72px);border-top:1px solid var(--line)}
+.contact h2{font:600 28px/1.15 "Space Grotesk",sans-serif;margin:0 0 8px}
+.contact p{margin:0;color:var(--soft)}
+footer{border-top:1px solid var(--line);padding-block:24px;color:var(--soft);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (prefers-reduced-motion:no-preference){.orbit{animation:spin 90s linear infinite;transform-origin:300px 300px}.orbit.slow{animation-duration:160s;animation-direction:reverse}@keyframes spin{to{transform:rotate(360deg)}}}
+@media(max-width:760px){.menu{display:grid;place-items:center}nav ul{display:none;position:absolute;top:64px;right:max(5vw,16px);flex-direction:column;gap:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px;min-width:180px;box-shadow:0 12px 30px rgba(6,34,46,.12)}nav ul.open{display:flex}nav a{display:block;padding:12px 14px;border-radius:10px}nav a:hover{background:var(--bg)}}
+@media(max-width:600px){.hero{grid-template-columns:minmax(0,1fr);min-height:0}.fig{justify-self:center;max-width:380px;order:2}.steps ol{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top" aria-label="Singularity IP home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><circle cx="13" cy="13" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="13" cy="13" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".55"/><circle cx="13" cy="13" r="2.6" fill="#ff2e7e"/></svg>
+      Singularity IP
+    </a>
+    <nav aria-label="Main">
+      <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="menuList" aria-label="Open menu"><span></span></button>
+      <ul id="menuList">
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div>
+      <h1>Public patent data, organised and searchable.</h1>
+      <p class="lede">We bring public patent publications together into one clean, consistent database you can search.</p>
+      <a class="btn" href="#contact">Get in touch
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="fig" aria-hidden="true">
+      <svg viewBox="0 0 600 600" id="orbit"></svg>
+    </div>
+  </section>
+
+  <section class="steps" id="about">
+    <div class="wrap">
+      <ol>
+        <li><span class="dot"><svg viewBox="0 0 16 16"><path d="M3 4h10M3 8h10M3 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><h2>Collect</h2><p>Publications from public patent sources.</p></li>
+        <li><span class="dot"><svg viewBox="0 0 16 16"><rect x="2.5" y="2.5" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 7h11" stroke="currentColor" stroke-width="1.6"/></svg></span><h2>Organise</h2><p>One consistent, well-kept database.</p></li>
+        <li><span class="dot"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m10.2 10.2 3.3 3.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><h2>Search</h2><p>Fast, precise search across it all.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p>We're just getting started. Contact details are coming soon.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>Singularity IP</span><span>Public patent data, organised.</span></div>
+</footer>
+
+<script>
+{
+  const svg = document.getElementById('orbit');
+  const rings = [270, 205, 140, 82];
+  let s = '';
+  rings.forEach((r, i) => { s += `<circle cx="300" cy="300" r="${r}" fill="none" stroke="currentColor" stroke-opacity="${0.12 + i * 0.05}" stroke-width="1"/>`; });
+  const marks = (n, r, size, op) => Array.from({ length: n }, (_, k) => {
+    const a = (k / n) * Math.PI * 2 + r * 0.013;
+    const x = (300 + Math.cos(a) * r).toFixed(1), y = (300 + Math.sin(a) * r).toFixed(1);
+    return `<rect x="${x}" y="${y}" width="${size}" height="${size * 1.3}" rx="1.5" fill="currentColor" fill-opacity="${op}" transform="rotate(${(a * 57.3).toFixed(0)} ${x} ${y})"/>`;
+  }).join('');
+  s += `<g class="orbit slow">${marks(36, 270, 7, 0.28)}</g>`;
+  s += `<g class="orbit">${marks(26, 205, 7, 0.45)}${marks(16, 140, 6, 0.65)}</g>`;
+  s += `<g class="orbit slow">${marks(9, 82, 5, 0.85)}</g>`;
+  s += `<circle cx="300" cy="300" r="34" fill="#ff2e7e" fill-opacity=".16"/><circle cx="300" cy="300" r="16" fill="#ff2e7e"/>`;
+  svg.innerHTML = s;
+  svg.style.color = 'var(--ink)';
+
+  const btn = document.getElementById('menuBtn'), list = document.getElementById('menuList');
+  btn.addEventListener('click', () => { const open = list.classList.toggle('open'); btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
+  list.addEventListener('click', e => { if (e.target.closest('a')) { list.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+}
+</script>
+</body>
+</html>
